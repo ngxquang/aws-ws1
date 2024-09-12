@@ -31,9 +31,9 @@ jobs:
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/ngxquang/aws-ws1.git
           cp -R public/* ${GITHUB_WORKSPACE}/built-site/
           cd ${GITHUB_WORKSPACE}/built-site
-          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/ngxquang/aws-ws1.git
           git add .
           git config user.name 'ngxquang'
           git config user.email 'baophong2401@gmail.com'
