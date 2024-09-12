@@ -29,7 +29,7 @@
 },
 {
 	"uri": "https://github.com/ngxquang/aws-ws1/tree/main/public/vi/",
-	"title": "MySQL Architechture",
+	"title": "MySQL Architecture",
 	"tags": [],
 	"description": "",
 	"content": "Kiến trúc và tối ưu hóa với MySQL Tổng quan Trong bối cảnh quản lý cơ sở dữ liệu, việc tối ưu hóa và khôi phục dữ liệu là rất quan trọng để duy trì hiệu suất và đảm bảo tính toàn vẹn của dữ liệu. Trong bài này sẽ chia sẻ chủ yếu cung cấp hướng dẫn về cách tối ưu hóa các truy vấn MySQL và sao lưu/khôi phục dữ liệu.\nNội dung Tổng quan về MySQL Tối ưu trong MySQL Restore Data "

@@ -1,5 +1,5 @@
 ---
-title : "MySQL Architechture"
+title : "MySQL Architecture"
 date :  "r Sys.Date()" 
 weight : 1 
 chapter : false
