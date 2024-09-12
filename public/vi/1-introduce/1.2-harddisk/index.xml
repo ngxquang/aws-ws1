@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kiến trúc phía ổ cứng on AWS Study Group</title>
-    <link>//localhost:1313/vi/1-introduce/1.2-harddisk/</link>
+    <link>/vi/1-introduce/1.2-harddisk/</link>
     <description>Recent content in Kiến trúc phía ổ cứng on AWS Study Group</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="//localhost:1313/vi/1-introduce/1.2-harddisk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/vi/1-introduce/1.2-harddisk/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

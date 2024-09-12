@@ -1,125 +1,125 @@
 [
 {
-	"uri": "//localhost:1313/2-optimization/2.2-params-optimization/2.2.1-buffer-cache/",
+	"uri": "/2-optimization/2.2-params-optimization/2.2.1-buffer-cache/",
 	"title": "Buffer_cache_hit",
 	"tags": [],
 	"description": "",
 	"content": " The buffer_cache_hit ratio indicates the memory usage of MySQL.\nThis ratio reflects whether MySQL performs operations in memory or needs to go to disk.\nBased on two metrics:\nInnodb_buffer_pool_read_requests: Total number of requests sent to the Buffer Pool in memory. Innodb_buffer_pool_read: Number of requests that had to go to disk to retrieve data (not found in the Buffer Pool in memory). To calculate the buffer_cache_hit ratio, use the following formula: If the ratio is \u0026lt;90%, optimization is needed.\n"
 },
 {
-	"uri": "//localhost:1313/1-introduce/1.3-folders/",
+	"uri": "/1-introduce/1.3-folders/",
 	"title": "Directory Structure After Installing MySQL",
 	"tags": [],
 	"description": "",
 	"content": " The directory structure is organized as follows:\nsys directory: Contains information related to the sys schema. performance_schema directory: Stores information for monitoring MySQL performance during operation. mysql directory: Contains information related to the data dictionary and system tables. This information is required by MySQL during operation. "
 },
 {
-	"uri": "//localhost:1313/1-introduce/1.2-harddisk/",
+	"uri": "/1-introduce/1.2-harddisk/",
 	"title": "Hard Disk Architecture",
 	"tags": [],
 	"description": "",
 	"content": " Hard Disk Architecture: Divided into several components (similar to how a house is divided into rooms). Each such component is called a tablespace (logical concept).\nFiles with the same type and characteristics are grouped into the same tablespace.\nFrom the buffer pool, changed data is written to the tablespace. Alternatively, the buffer pool reads data from datafiles within tablespaces.\nThere are several types of tablespaces:\nSystem: When MySQL is installed, the tablespaces containing system files are automatically installed on the system (file ibdata1). Undo Tablespace: Responsible for performing rollback operations for DML statements. The difference between Redo log and Undo is as follows: Redo log shows the process of data changes. It answers the question: Why 10 → 11. Meaning, when the value changes from 10 → 11, the redo log will record the action of changing from 10 → as update. Undo allows retrieving the previous value. It answers the question: Now we have a value of 11, how can we revert to the previous value? Temp Tablespace: Typically, when coding, a temporary table is created for calculations and then deleted ⇒ This design is not ideal. The database itself has dedicated areas for temp. It is automatically freed at the end of the session. General tablespace: Tablespaces can be created and tables can be created within that tablespace. In large projects, there is the concept of data lifecycle management. We can manage data in a specific tablespace. Tablespaces contain data and datafiles Redo Log is also written to Disk into the Redo Log File.\nDoublewrite Buffer Files\nWhen data is written to disk, it is first written to the doublewrite buffer. Then, from the doublewrite buffer, it is written to its final location in the tablespace. If a failure occurs during the write process, InnoDB can use the copy in the doublewrite buffer to recover the data page. "
 },
 {
-	"uri": "//localhost:1313/1-introduce/1.1-memory/",
+	"uri": "/1-introduce/1.1-memory/",
 	"title": "Memory Architecture",
 	"tags": [],
 	"description": "",
 	"content": " When the database is stored in memory, there are 2 main components: Buffer pool (or buffer cache): When executing a SELECT statement, data is retrieved from this buffer.\nDuring the first query, data is read from disk and stored in the buffer, and subsequent reads of the same data will fetch it from the buffer rather than from the disk. Redo log (DML processing area): Stores the changes made by DML. For example, if the buffer pool holds a value of 10, and an UPDATE statement changes it to 11, the Redo log will record why 10 → 11.\n"
 },
 {
-	"uri": "//localhost:1313/",
+	"uri": "/",
 	"title": "MySQL Architecture",
 	"tags": [],
 	"description": "",
 	"content": "Architecture and Optimization with MySQL Overview In the context of database management, optimizing and restoring data are crucial for maintaining performance and ensuring data integrity. This document primarily provides guidance on how to optimize MySQL queries and perform data backup/restore.\nContents Introduction to MySQL Optimization in MySQL Restore Data "
 },
 {
-	"uri": "//localhost:1313/1-introduce/",
+	"uri": "/1-introduce/",
 	"title": "Overview of MySQL",
 	"tags": [],
 	"description": "",
 	"content": "MySQL is a popular database management system designed for efficient data management and storage. The way MySQL organizes and processes data not only optimizes performance but also ensures integrity and security of the data. By combining the use of caching and disk storage, MySQL can retrieve information quickly while ensuring that all changes are recorded and protected.\nIn its operation, MySQL utilizes an intelligent storage system to organize data into different tablespaces. This helps the system manage large datasets smoothly while providing recovery capabilities in case of failures. As a result, MySQL remains a reliable choice for data management systems ranging from small to large.\nContents Directory Structure After Installing MySQL Disk Architecture Memory Architecture "
 },
 {
-	"uri": "//localhost:1313/3-restore/3.1-physical/",
+	"uri": "/3-restore/3.1-physical/",
 	"title": "Physical Restore",
 	"tags": [],
 	"description": "",
 	"content": " Physical Backup in MySQL is a method of backing up all physical files of the database, including data files, log files, and configuration files, from the storage system.\nPhysical Backup directly saves the system files used by MySQL to store data. These files include InnoDB data files, MyISAM data files, log files, and related configuration files.\nThe data is copied in its entirety and can be immediately used upon restoration, without the need to re-execute SQL commands as in Logical Backup.\n"
 },
 {
-	"uri": "//localhost:1313/2-optimization/2.1-sql-optimization/",
+	"uri": "/2-optimization/2.1-sql-optimization/",
 	"title": "SQL Execution Optimization",
 	"tags": [],
 	"description": "",
 	"content": "To optimize anything, we need to understand the execution plan.\nContent The Problem Statement Index Partition "
 },
 {
-	"uri": "//localhost:1313/2-optimization/2.1-sql-optimization/2.1.1-problems/",
+	"uri": "/2-optimization/2.1-sql-optimization/2.1.1-problems/",
 	"title": "The Problem Statement",
 	"tags": [],
 	"description": "",
 	"content": " Suppose there is a SELECT statement, to optimize it you need to review the execution plan of the statement. How to view the execution plan: Use EXPLAIN Important parameters: table: customers: The table being scanned. type: ALL (similar to Full Table Scan): Scans all records in the customers table. rows: 10: The system\u0026rsquo;s estimate of how many records are in the table. This estimate may be incorrect. filtered: The expected percentage of rows satisfying the WHERE condition after scanning 10 rows. Note: Whenever you see type: ALL, it needs to be reconsidered. If the number of records is small (10 - 100), it is not a problem, but with tens of thousands or hundreds of thousands of rows, it can be very performance-intensive. "
 },
 {
-	"uri": "//localhost:1313/2-optimization/2.1-sql-optimization/2.1.2-index/",
+	"uri": "/2-optimization/2.1-sql-optimization/2.1.2-index/",
 	"title": "Index",
 	"tags": [],
 	"description": "",
 	"content": " Creating an index on a column used in the WHERE condition:\nThe difference when running EXPLAIN again: type: ref: The type is no longer ALL but ref. This means it does not scan the entire table but rather scans the index that was just created. possible_keys: idx_namsinh: The system lists the possible indexes it could use to execute the statement. key: idx_namsinh: Among the possible_keys, the system selects only idx_namsinh. rows: 1: Reduced compared to before. Creating an index on multiple columns (commonly applied):\nCreating an index on 2 columns: The difference when running EXPLAIN again: possible_keys: idx_namsinh, idx_namsinh_ngaygd: The system now includes an additional index, which is the one just created.\nkey: idx_namsinh_ngaygd: Among the possible_keys, the system selects only idx_namsinh. rows: 1: The difference becomes apparent when working with thousands of rows in a database. The example above is just a demo. Notes when using composite index (index on multiple columns):\nThe first column plays a crucial role. Suppose you modify the statement to include only the ngay_giao_dich attribute, what happens? Column Type: ALL: It has to scan the entire table even though an index was created? possible_keys: NULL: ??? Why is there no index on the columns nam_sinh and ngay_giao_dich even though they were indexed??? ⇒ The first column is very important in a composite index. If you create another composite index with ngay_giao_dich first, it will be different: "
 },
 {
-	"uri": "//localhost:1313/3-restore/3.2-logical/",
+	"uri": "/3-restore/3.2-logical/",
 	"title": "Logical Restore",
 	"tags": [],
 	"description": "",
 	"content": " Logical Backup stores the data and structure of the database in the form of SQL commands, such as CREATE TABLE, INSERT INTO, etc. This method primarily backs up the content of the database (including tables, data, triggers, stored procedures, etc.) without involving the physical files of the database.\nThe most common tool for creating Logical Backup in MySQL is mysqldump.\nBackup a Table\nBackup only the structure of the table\nCommand: mysqldump.exe -uroot -p \u0026lt;database_name\u0026gt; -d \u0026lt;table_name\u0026gt; \u0026gt; \u0026lt;folder_path\u0026gt;\\\u0026lt;table_name\u0026gt;_ddl.sql Backup only the data of the table\nCommand: mysqldump.exe -uroot -p \u0026lt;database_name\u0026gt; -t \u0026lt;table_name\u0026gt; \u0026gt; \u0026lt;folder_path\u0026gt;\\\u0026lt;table_name\u0026gt;_data.sql Backup both the structure and data of the table\nCommand: mysqldump.exe -uroot -p \u0026lt;database_name\u0026gt; \u0026lt;table_name\u0026gt; \u0026gt; \u0026lt;folder_path\u0026gt;\\\u0026lt;table_name\u0026gt;_table.sql Backup One or More Databases\nBackup one database:\nCommand: mysqldump.exe -uroot -p \u0026lt;database_name\u0026gt; \u0026gt; \u0026lt;folder_path\u0026gt;\\\u0026lt;database_name\u0026gt;db.sql Backup all databases:\nCommand: mysqldump.exe -uroot -p --all-databases \u0026gt; \u0026lt;folder_path\u0026gt;\\alldb.sql "
 },
 {
-	"uri": "//localhost:1313/2-optimization/",
+	"uri": "/2-optimization/",
 	"title": "Optimization in MySQL",
 	"tags": [],
 	"description": "",
 	"content": " Optimizing SQL in MySQL\nIn a large database system, optimizing SQL queries plays a crucial role in improving performance. Each query is not just about searching and retrieving data but is a complex process that affects the overall speed of the system.\nWhy is optimization necessary?\nIn practice, as the database grows larger, SQL queries can become slow and consume more resources. Therefore, query optimization is essential to avoid overloading the system and to improve response speed.\nThis section will discuss how MySQL executes queries and apply optimization techniques such as using indexes or partitioning.\nContents SQL Execution Optimization Parameter Optimization "
 },
 {
-	"uri": "//localhost:1313/2-optimization/2.2-params-optimization/",
+	"uri": "/2-optimization/2.2-params-optimization/",
 	"title": "Optimizing MySQL Parameters",
 	"tags": [],
 	"description": "",
 	"content": "Creating IAM Role In addition to optimizing SQL queries, we can also optimize parameters within the MySQL system.\nIn this section, we will explore two types of parameter optimizations.\nBuffer Cache Hit Table Cache Hit "
 },
 {
-	"uri": "//localhost:1313/2-optimization/2.2-params-optimization/2.2.2-table-cache/",
+	"uri": "/2-optimization/2.2-params-optimization/2.2.2-table-cache/",
 	"title": "Table_cache_hit",
 	"tags": [],
 	"description": "",
 	"content": " Cache: When data is cached in memory, performance improves.\nWhile the previous section covered block-level caching, this section deals with table-level caching.\nThere are two metrics for calculation:\nOpen_tables: Total number of tables open in the cache. Opened_tables: Total number of tables opened. Calculate the Table Cache Hit ratio using the following formula: If the ratio is \u0026lt; 80%, optimization is needed.\nOptimization Parameter: Increase the table_open_cache parameter. "
 },
 {
-	"uri": "//localhost:1313/2-optimization/2.1-sql-optimization/2.1.3-partition/",
+	"uri": "/2-optimization/2.1-sql-optimization/2.1.3-partition/",
 	"title": "Partition",
 	"tags": [],
 	"description": "",
 	"content": " Suppose we create a table customers_partition, similar to the customers table but divided into partitions. The DDL structure of this table is not significantly different from a regular table, but the key feature is that the transaction date column is used to create the partitions. Specifically, transactions are divided into partitions based on the condition LESS THAN year(\u0026lsquo;Ngay_giao_dich\u0026rsquo;), with each partition resembling a floor of the data building.\nApplying partitioning helps speed up queries, especially when dealing with large tables. However, to fully utilize the benefits of partitioning, the WHERE condition in the query must include the column used to create the partitions.\nCREATE TABLE customers_partition (\rid INT,\rten_khach_hang VARCHAR(100),\rngay_giao_dich DATE\r)\rPARTITION BY RANGE (YEAR(ngay_giao_dich)) (\rPARTITION p0 VALUES LESS THAN (2015),\rPARTITION p1 VALUES LESS THAN (2020),\rPARTITION p2 VALUES LESS THAN (2025)\r); Suppose we have the customers_partition table as above: PARTITION BY RANGE (YEAR(ngay_giao_dich)): Partitions by range (RANGE Partitioning) based on the ngay_giao_dich column. Here, the data is partitioned based on the year of the ngay_giao_dich column using the YEAR() function, meaning the ngay_giao_dich values are converted to the year to determine which partition the data belongs to. For example: If ngay_giao_dich is \u0026lsquo;2018-03-15\u0026rsquo;, MySQL will use the year \u0026lsquo;2018\u0026rsquo; to partition the data.\nPARTITION p0 VALUES LESS THAN (2015): Partition p0 stores all rows with YEAR(ngay_giao_dich) values less than the year 2015. This means all transactions before 2015 will be stored in this partition.\n"
 },
 {
-	"uri": "//localhost:1313/3-restore/",
+	"uri": "/3-restore/",
 	"title": "Restore Data",
 	"tags": [],
 	"description": "",
 	"content": "Having explored how to optimize a database in the previous sections, this section will focus on how to backup data to prevent data loss.\nContents 3.1. Physical Restore 3.2. Logical Restore\n"
 },
 {
-	"uri": "//localhost:1313/categories/",
+	"uri": "/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "//localhost:1313/tags/",
+	"uri": "/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

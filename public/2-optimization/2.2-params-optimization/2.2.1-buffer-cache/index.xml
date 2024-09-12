@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Buffer_cache_hit on AWS Study Group</title>
-    <link>//localhost:1313/2-optimization/2.2-params-optimization/2.2.1-buffer-cache/</link>
+    <link>/2-optimization/2.2-params-optimization/2.2.1-buffer-cache/</link>
     <description>Recent content in Buffer_cache_hit on AWS Study Group</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="//localhost:1313/2-optimization/2.2-params-optimization/2.2.1-buffer-cache/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/2-optimization/2.2-params-optimization/2.2.1-buffer-cache/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
