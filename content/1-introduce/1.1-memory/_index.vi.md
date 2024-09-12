@@ -11,5 +11,5 @@ pre : " <b> 1.3 </b> "
     
     2. **Redo log (Vùng xử lý DML):** Lưu trữ  những dữ liệu thay đổi của DML. Ví dụ trong buffer pool đang có giá trị là 10. Câu lệnh UPDATE thành 11 thì Redo log nó sẽ lưu Tại sao 10 → 11
 
-![Minh họa kiến trúc trên memory](/images/1.introduce/001-memory.png)
+![Minh họa kiến trúc trên memory](https://ngxquang.github.io/aws-ws1/images/1.introduce/001-memory.png)
 
