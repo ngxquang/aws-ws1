@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Preparation  :: AWS Study Group</title>
+    <title>Optimization in MySQL :: AWS Study Group</title>
 
     
-    <link href="/css/nucleus.css?1726116778" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1726116778" rel="stylesheet">
-    <link href="/css/hybrid.css?1726116778" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1726116778" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1726116778" rel="stylesheet">
-    <link href="/css/auto-complete.css?1726116778" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1726116778" rel="stylesheet">
-    <link href="/css/theme.css?1726116778" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1726116778" rel="stylesheet">
+    <link href="/css/nucleus.css?1726116982" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1726116982" rel="stylesheet">
+    <link href="/css/hybrid.css?1726116982" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1726116982" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1726116982" rel="stylesheet">
+    <link href="/css/auto-complete.css?1726116982" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1726116982" rel="stylesheet">
+    <link href="/css/theme.css?1726116982" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1726116982" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1726116778" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1726116982" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1726116778"></script>
+    <script src="/js/jquery-3.3.1.min.js?1726116982"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1726116778"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1726116778"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1726116982"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1726116982"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1726116778"></script>
+<script type="text/javascript" src="/js/search.js?1726116982"></script>
 
     
   </div>
@@ -204,13 +204,13 @@
  
   
     
-    <li data-nav-id="/2-optimization/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-optimization/" title="Optimization in MySQL" class="dd-item 
         
         active
         
         ">
       <a href="/2-optimization/">
-           <b> 2. </b> Preparation 
+           <b> 2. </b> Optimization in MySQL
           
             <i class="fas fa-check read-icon"></i>
           
@@ -668,7 +668,7 @@
             
           
           
-            <a href='/'>MySQL Architecture</a> > Preparation 
+            <a href='/'>MySQL Architecture</a> > Optimization in MySQL
           
         
           
@@ -683,7 +683,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#content">Content</a></li>
+        <li><a href="#contents">Contents</a></li>
       </ul>
     </li>
   </ul>
@@ -703,7 +703,7 @@
           
             <h1>
               
-              Preparation 
+              Optimization in MySQL
             </h1>
           
 
@@ -711,20 +711,21 @@
 
 
 
-	
-<div class="notices info" ><p>You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.</p>
-</div>
-
-<p>To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:</p>
+	<ol>
+<li>
+<p>Optimizing SQL in MySQL<br>
+In a large database system, <strong>optimizing SQL queries</strong> plays a crucial role in improving performance. Each query is not just about searching and retrieving data but is a complex process that affects the overall speed of the system.</p>
+</li>
+<li>
+<p>Why is optimization necessary?<br>
+In practice, as the database grows larger, SQL queries can become slow and consume more resources. Therefore, query optimization is essential to avoid overloading the system and to improve response speed.</p>
+</li>
+</ol>
+<p>This section will discuss how MySQL executes queries and apply optimization techniques such as using <strong>indexes</strong> or <strong>partitioning</strong>.</p>
+<h3 id="contents">Contents</h3>
 <ul>
-<li><a href="https://000004.awsstudygroup.com/en/">About Amazon EC2</a></li>
-<li><a href="https://000003.awsstudygroup.com/en/">Works with Amazon VPC</a></li>
-</ul>
-<p>In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.</p>
-<h3 id="content">Content</h3>
-<ul>
-<li><a href="2.1-createec2/">Prepare VPC and EC2</a></li>
-<li><a href="2.2-createiamrole/">Create IAM Role</a></li>
+<li><a href="/2-optimization/2.1-sql-optimization/">SQL Execution Optimization</a></li>
+<li><a href="/2-optimization/2.2-params-optimization/">Parameter Optimization</a></li>
 </ul>
 
 
@@ -1040,19 +1041,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1726116778"></script>
-    <script src="/js/perfect-scrollbar.min.js?1726116778"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1726116778"></script>
-    <script src="/js/jquery.sticky.js?1726116778"></script>
-    <script src="/js/featherlight.min.js?1726116778"></script>
-    <script src="/js/highlight.pack.js?1726116778"></script>
+    <script src="/js/clipboard.min.js?1726116982"></script>
+    <script src="/js/perfect-scrollbar.min.js?1726116982"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1726116982"></script>
+    <script src="/js/jquery.sticky.js?1726116982"></script>
+    <script src="/js/featherlight.min.js?1726116982"></script>
+    <script src="/js/highlight.pack.js?1726116982"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1726116778"></script>
-    <script src="/js/learn.js?1726116778"></script>
-    <script src="/js/hugo-learn.js?1726116778"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1726116982"></script>
+    <script src="/js/learn.js?1726116982"></script>
+    <script src="/js/hugo-learn.js?1726116982"></script>
 
-    <link href="/mermaid/mermaid.css?1726116778" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1726116778"></script>
+    <link href="/mermaid/mermaid.css?1726116982" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1726116982"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

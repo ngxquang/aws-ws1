@@ -1,21 +1,19 @@
 ---
-title : "Preparation "
-date : "`r Sys.Date()`"
-weight : 2
-chapter : false
-pre : " <b> 2. </b> "
+title: "Optimization in MySQL"
+date: "`r Sys.Date()`"
+weight: 2
+chapter: false
+pre: " <b> 2. </b> "
 ---
 
-{{% notice info %}}
-You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.
-{{% /notice %}}
+1. Optimizing SQL in MySQL  
+In a large database system, **optimizing SQL queries** plays a crucial role in improving performance. Each query is not just about searching and retrieving data but is a complex process that affects the overall speed of the system.
 
-To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:
-  - [About Amazon EC2](https://000004.awsstudygroup.com/en/)
-  - [Works with Amazon VPC](https://000003.awsstudygroup.com/en/)
+2. Why is optimization necessary?  
+In practice, as the database grows larger, SQL queries can become slow and consume more resources. Therefore, query optimization is essential to avoid overloading the system and to improve response speed.
 
-In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.
+This section will discuss how MySQL executes queries and apply optimization techniques such as using **indexes** or **partitioning**.
 
-### Content
-  - [Prepare VPC and EC2](2.1-createec2/)
-  - [Create IAM Role](2.2-createiamrole/)
+### Contents  
+  - [SQL Execution Optimization](2.1-sql-optimization/)  
+  - [Parameter Optimization](2.2-params-optimization/)

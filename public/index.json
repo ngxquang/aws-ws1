@@ -77,18 +77,18 @@
 	"content": " Logical Backup stores the data and structure of the database in the form of SQL commands, such as CREATE TABLE, INSERT INTO, etc. This method primarily backs up the content of the database (including tables, data, triggers, stored procedures, etc.) without involving the physical files of the database.\nThe most common tool for creating Logical Backup in MySQL is mysqldump.\nBackup a Table\nBackup only the structure of the table\nCommand: mysqldump.exe -uroot -p \u0026lt;database_name\u0026gt; -d \u0026lt;table_name\u0026gt; \u0026gt; \u0026lt;folder_path\u0026gt;\\\u0026lt;table_name\u0026gt;_ddl.sql Backup only the data of the table\nCommand: mysqldump.exe -uroot -p \u0026lt;database_name\u0026gt; -t \u0026lt;table_name\u0026gt; \u0026gt; \u0026lt;folder_path\u0026gt;\\\u0026lt;table_name\u0026gt;_data.sql Backup both the structure and data of the table\nCommand: mysqldump.exe -uroot -p \u0026lt;database_name\u0026gt; \u0026lt;table_name\u0026gt; \u0026gt; \u0026lt;folder_path\u0026gt;\\\u0026lt;table_name\u0026gt;_table.sql Backup One or More Databases\nBackup one database:\nCommand: mysqldump.exe -uroot -p \u0026lt;database_name\u0026gt; \u0026gt; \u0026lt;folder_path\u0026gt;\\\u0026lt;database_name\u0026gt;db.sql Backup all databases:\nCommand: mysqldump.exe -uroot -p --all-databases \u0026gt; \u0026lt;folder_path\u0026gt;\\alldb.sql "
 },
 {
+	"uri": "//localhost:1313/2-optimization/",
+	"title": "Optimization in MySQL",
+	"tags": [],
+	"description": "",
+	"content": " Optimizing SQL in MySQL\nIn a large database system, optimizing SQL queries plays a crucial role in improving performance. Each query is not just about searching and retrieving data but is a complex process that affects the overall speed of the system.\nWhy is optimization necessary?\nIn practice, as the database grows larger, SQL queries can become slow and consume more resources. Therefore, query optimization is essential to avoid overloading the system and to improve response speed.\nThis section will discuss how MySQL executes queries and apply optimization techniques such as using indexes or partitioning.\nContents SQL Execution Optimization Parameter Optimization "
+},
+{
 	"uri": "//localhost:1313/2-optimization/2.2-params-optimization/",
 	"title": "Optimizing MySQL Parameters",
 	"tags": [],
 	"description": "",
 	"content": "Creating IAM Role In addition to optimizing SQL queries, we can also optimize parameters within the MySQL system.\nIn this section, we will explore two types of parameter optimizations.\nBuffer Cache Hit Table Cache Hit "
-},
-{
-	"uri": "//localhost:1313/2-optimization/",
-	"title": "Preparation ",
-	"tags": [],
-	"description": "",
-	"content": "\rYou need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.\nTo learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:\nAbout Amazon EC2 Works with Amazon VPC In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.\nContent Prepare VPC and EC2 Create IAM Role "
 },
 {
 	"uri": "//localhost:1313/2-optimization/2.2-params-optimization/2.2.2-table-cache/",
