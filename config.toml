@@ -1,6 +1,7 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 
+baseURL = "https://github.com/ngxquang/aws-ws1/"
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
@@ -9,10 +10,9 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
   # Git hub repo link
-  baseURL = "https://github.com/ngxquang/aws-ws1/tree/main/"
   editURL = ""
   description = ""
-  author = "journeyoftheaverageguy@gmail.com"
+  author = "baophong2401@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false

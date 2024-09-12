@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Overview of MySQL on AWS Study Group</title>
-    <link>/1-introduce/</link>
+    <link>https://github.com/ngxquang/aws-ws1/1-introduce/</link>
     <description>Recent content in Overview of MySQL on AWS Study Group</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/1-introduce/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://github.com/ngxquang/aws-ws1/1-introduce/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
