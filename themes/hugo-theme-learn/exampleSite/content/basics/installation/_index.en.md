@@ -46,9 +46,9 @@ Chapters are pages that contain other child pages. It has a special layout style
 Discover what this Hugo theme is all about and the core concepts behind it.
 ```
 
-renders as 
+renders as
 
-![A Chapter](/en/basics/installation/images/chapter.png?classes=shadow&width=60pc)
+![A Chapter](/en/basics/installationhttps://ngxquang.github.io/aws-ws1/images/chapter.png?classes=shadow&width=60pc)
 
 **Hugo-theme-learn** provides archetypes to create skeletons for your website. Begin by creating your first chapter page with the following command
 
@@ -69,7 +69,7 @@ hugo new basics/first-content.md
 hugo new basics/second-content/_index.md
 ```
 
-Feel free to edit thoses files by adding some sample content and replacing the `title` value in the beginning of the files. 
+Feel free to edit thoses files by adding some sample content and replacing the `title` value in the beginning of the files.
 
 ## Launching the website locally
 

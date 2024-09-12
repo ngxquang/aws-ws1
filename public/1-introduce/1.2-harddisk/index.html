@@ -7,26 +7,26 @@
     <meta name="description" content="">
 <meta name="author" content="baophong2401@gmail.com">
 
-    <link rel="icon" href="/ngxquang/aws-ws1/tree/main/public/images/favicon.png" type="image/png">
+    <link rel="icon" href="https://ngxquang.github.io/aws-ws1/images/favicon.png" type="image/png">
 
     <title>Hard Disk Architecture :: AWS Study Group</title>
 
     
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/nucleus.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/fontawesome-all.min.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/hybrid.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/featherlight.min.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/perfect-scrollbar.min.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/auto-complete.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/atom-one-dark-reasonable.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/theme.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/hugo-theme.css?1726120026" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/nucleus.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/fontawesome-all.min.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/hybrid.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/featherlight.min.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/perfect-scrollbar.min.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/auto-complete.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/atom-one-dark-reasonable.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/theme.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/hugo-theme.css?1726120315" rel="stylesheet">
     
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/theme-workshop.css?1726120026" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/theme-workshop.css?1726120315" rel="stylesheet">
     
     
 
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/jquery-3.3.1.min.js?1726120026"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/jquery-3.3.1.min.js?1726120315"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/lunr.min.js?1726120026"></script>
-<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/auto-complete.js?1726120026"></script>
+<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/lunr.min.js?1726120315"></script>
+<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/auto-complete.js?1726120315"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/github.com\/ngxquang\/aws-ws1\/tree\/main\/public\/";
     
 </script>
-<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/search.js?1726120026"></script>
+<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/search.js?1726120315"></script>
 
     
   </div>
@@ -732,8 +732,8 @@
 <li><strong>Temp Tablespace:</strong> Typically, when coding, a temporary table is created for calculations and then deleted ⇒ This design is not ideal. The database itself has dedicated areas for temp. It is automatically freed at the end of the session.</li>
 <li><strong>General tablespace:</strong> Tablespaces can be created and tables can be created within that tablespace. In large projects, there is the concept of <strong>data lifecycle management</strong>. We can manage data in a specific tablespace.</li>
 </ul>
-<p><img alt="cmd1" src="/images/1.introduce/002-cmd1.png"></p>
-<p><img alt="cmd2" src="/images/1.introduce/003-cmd2.png"></p>
+<p><img alt="cmd1" src="https://ngxquang.github.io/aws-ws1/images/1.introduce/002-cmd1.png"></p>
+<p><img alt="cmd2" src="https://ngxquang.github.io/aws-ws1/images/1.introduce/003-cmd2.png"></p>
 <ul>
 <li><strong>Tablespaces contain data and datafiles</strong></li>
 </ul>
@@ -746,11 +746,11 @@
 <ul>
 <li>When data is written to disk, it is first written to the doublewrite buffer.</li>
 <li>Then, from the doublewrite buffer, it is written to its final location in the tablespace.</li>
-<li>If a failure occurs during the write process, InnoDB can use the copy in the doublewrite buffer to recover the data page.</li>
+<li>If a failure occurs during the write process, InnoDB can use the copy in the doublewrite buffer to recover the data page.
+<img alt="harddisk" src="https://ngxquang.github.io/aws-ws1/images/1.introduce/004-arch.png"></li>
 </ul>
 </li>
 </ol>
-<p><img alt="harddisk" src="/images/1.introduce/004-arch.png"></p>
 </li>
 </ul>
 
@@ -1068,19 +1068,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/clipboard.min.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/perfect-scrollbar.min.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/perfect-scrollbar.jquery.min.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/jquery.sticky.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/featherlight.min.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/highlight.pack.js?1726120026"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/clipboard.min.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/perfect-scrollbar.min.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/perfect-scrollbar.jquery.min.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/jquery.sticky.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/featherlight.min.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/highlight.pack.js?1726120315"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/modernizr.custom-3.6.0.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/learn.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/hugo-learn.js?1726120026"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/modernizr.custom-3.6.0.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/learn.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/hugo-learn.js?1726120315"></script>
 
-    <link href="/ngxquang/aws-ws1/tree/main/public/mermaid/mermaid.css?1726120026" rel="stylesheet" />
-    <script src="/ngxquang/aws-ws1/tree/main/public/mermaid/mermaid.js?1726120026"></script>
+    <link href="/ngxquang/aws-ws1/tree/main/public/mermaid/mermaid.css?1726120315" rel="stylesheet" />
+    <script src="/ngxquang/aws-ws1/tree/main/public/mermaid/mermaid.js?1726120315"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

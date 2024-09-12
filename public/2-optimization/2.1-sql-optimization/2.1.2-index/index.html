@@ -7,26 +7,26 @@
     <meta name="description" content="">
 <meta name="author" content="baophong2401@gmail.com">
 
-    <link rel="icon" href="/ngxquang/aws-ws1/tree/main/public/images/favicon.png" type="image/png">
+    <link rel="icon" href="https://ngxquang.github.io/aws-ws1/images/favicon.png" type="image/png">
 
     <title>Index :: AWS Study Group</title>
 
     
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/nucleus.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/fontawesome-all.min.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/hybrid.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/featherlight.min.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/perfect-scrollbar.min.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/auto-complete.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/atom-one-dark-reasonable.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/theme.css?1726120026" rel="stylesheet">
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/hugo-theme.css?1726120026" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/nucleus.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/fontawesome-all.min.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/hybrid.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/featherlight.min.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/perfect-scrollbar.min.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/auto-complete.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/atom-one-dark-reasonable.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/theme.css?1726120315" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/hugo-theme.css?1726120315" rel="stylesheet">
     
-    <link href="/ngxquang/aws-ws1/tree/main/public/css/theme-workshop.css?1726120026" rel="stylesheet">
+    <link href="/ngxquang/aws-ws1/tree/main/public/css/theme-workshop.css?1726120315" rel="stylesheet">
     
     
 
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/jquery-3.3.1.min.js?1726120026"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/jquery-3.3.1.min.js?1726120315"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/lunr.min.js?1726120026"></script>
-<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/auto-complete.js?1726120026"></script>
+<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/lunr.min.js?1726120315"></script>
+<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/auto-complete.js?1726120315"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/github.com\/ngxquang\/aws-ws1\/tree\/main\/public\/";
     
 </script>
-<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/search.js?1726120026"></script>
+<script type="text/javascript" src="/ngxquang/aws-ws1/tree/main/public/js/search.js?1726120315"></script>
 
     
   </div>
@@ -718,11 +718,11 @@
 	<ol>
 <li>
 <p><strong>Creating an index on a column used in the WHERE condition:</strong></p>
-<p><img alt="Creating index on a column" src="/images/2.optimization/003-index1.png"></p>
+<p><img alt="Creating index on a column" src="https://ngxquang.github.io/aws-ws1/images/2.optimization/003-index1.png"></p>
 <ul>
 <li>The difference when running EXPLAIN again:</li>
 </ul>
-<p><img alt="Result after explain" src="/images/2.optimization/004-index2.png"></p>
+<p><img alt="Result after explain" src="https://ngxquang.github.io/aws-ws1/images/2.optimization/004-index2.png"></p>
 <ul>
 <li><strong>type: ref:</strong> The type is no longer ALL but ref. This means it does not scan the entire table but rather scans the index that was just created.
 <ul>
@@ -738,32 +738,28 @@
 <ul>
 <li>Creating an index on 2 columns:</li>
 </ul>
-<p><img alt="Creating index on multiple columns" src="/images/2.optimization/005-index3.png"></p>
+<p><img alt="Creating index on multiple columns" src="https://ngxquang.github.io/aws-ws1/images/2.optimization/005-index3.png"></p>
 <ul>
 <li>The difference when running EXPLAIN again:</li>
 </ul>
-<p><img alt="After explain" src="/images/2.optimization/006-index4.png"></p>
+<p><img alt="After explain" src="https://ngxquang.github.io/aws-ws1/images/2.optimization/006-index4.png"></p>
 <ul>
-<li>
-<p><strong>possible_keys: idx_namsinh, idx_namsinh_ngaygd:</strong> The system now includes an additional index, which is the one just created.</p>
+<li><strong>possible_keys: idx_namsinh, idx_namsinh_ngaygd:</strong> The system now includes an additional index, which is the one just created.
 <ul>
 <li>key: idx_namsinh_ngaygd: Among the possible_keys, the system selects only idx_namsinh.</li>
 <li>rows: 1: The difference becomes apparent when working with thousands of rows in a database. The example above is just a demo.</li>
 </ul>
 </li>
-<li>
-<p>Notes when using <strong>composite index (index on multiple columns):</strong></p>
+<li>Notes when using <strong>composite index (index on multiple columns):</strong>
 <ul>
 <li><strong>The first column plays a crucial role.</strong></li>
-<li>Suppose you modify the statement to include only the ngay_giao_dich attribute, what happens?</li>
-</ul>
-<p><img alt="Example" src="/images/2.optimization/006-index4.png"></p>
-<ul>
+<li>Suppose you modify the statement to include only the ngay_giao_dich attribute, what happens?
+<img alt="Example" src="https://ngxquang.github.io/aws-ws1/images/2.optimization/006-index4.png"></li>
 <li>Column Type: ALL: It has to scan the entire table even though an index was created?</li>
 <li>possible_keys: NULL: ??? Why is there no index on the columns nam_sinh and ngay_giao_dich even though they were indexed???</li>
-<li>⇒ The first column is very important in a composite index. If you create another composite index with ngay_giao_dich first, it will be different:</li>
+<li>⇒ The first column is very important in a composite index. If you create another composite index with ngay_giao_dich first, it will be different:
+<img alt="After explain" src="https://ngxquang.github.io/aws-ws1/images/2.optimization/007-index5.png"></li>
 </ul>
-<p><img alt="After explain" src="/images/2.optimization/007-index5.png"></p>
 </li>
 </ul>
 </li>
@@ -1087,19 +1083,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/clipboard.min.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/perfect-scrollbar.min.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/perfect-scrollbar.jquery.min.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/jquery.sticky.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/featherlight.min.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/highlight.pack.js?1726120026"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/clipboard.min.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/perfect-scrollbar.min.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/perfect-scrollbar.jquery.min.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/jquery.sticky.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/featherlight.min.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/highlight.pack.js?1726120315"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/modernizr.custom-3.6.0.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/learn.js?1726120026"></script>
-    <script src="/ngxquang/aws-ws1/tree/main/public/js/hugo-learn.js?1726120026"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/modernizr.custom-3.6.0.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/learn.js?1726120315"></script>
+    <script src="/ngxquang/aws-ws1/tree/main/public/js/hugo-learn.js?1726120315"></script>
 
-    <link href="/ngxquang/aws-ws1/tree/main/public/mermaid/mermaid.css?1726120026" rel="stylesheet" />
-    <script src="/ngxquang/aws-ws1/tree/main/public/mermaid/mermaid.js?1726120026"></script>
+    <link href="/ngxquang/aws-ws1/tree/main/public/mermaid/mermaid.css?1726120315" rel="stylesheet" />
+    <script src="/ngxquang/aws-ws1/tree/main/public/mermaid/mermaid.js?1726120315"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

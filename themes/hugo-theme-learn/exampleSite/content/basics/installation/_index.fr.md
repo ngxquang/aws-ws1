@@ -36,7 +36,7 @@ home = [ "HTML", "RSS", "JSON"]
 
 ## Créer votre première page chapitre
 
-Les *chapitres* sont des pages contenant d'autre pages filles. Elles ont un affichage spécial et contiennent habituellement juste un _nom_ de chapitre, le _titre_ et un _résumé_ de la section.
+Les _chapitres_ sont des pages contenant d'autre pages filles. Elles ont un affichage spécial et contiennent habituellement juste un _nom_ de chapitre, le _titre_ et un _résumé_ de la section.
 
 ```
 ### Chapitre 1
@@ -48,7 +48,7 @@ Découvrez comment utiliser ce thème Hugo et apprenez en les concepts
 
 s'affiche comme
 
-![Un chapitre](/en/basics/installation/images/chapter.png?classes=shadow&width=60pc)
+![Un chapitre](/en/basics/installationhttps://ngxquang.github.io/aws-ws1/images/chapter.png?classes=shadow&width=60pc)
 
 **Hugo-theme-learn** fournit des archétypes pour créer des squelettes pour votre site. Commencez par créer votre premier chapitre avec la commande suivante:
 
@@ -67,7 +67,7 @@ hugo new basics/first-content.md
 hugo new basics/second-content/_index.md
 ```
 
-N'hésitez pas à éditer ces fichiers en ajoutant des exemple de contenu et en remplaçant le paramètre `title` au début du fichier. 
+N'hésitez pas à éditer ces fichiers en ajoutant des exemple de contenu et en remplaçant le paramètre `title` au début du fichier.
 
 ## Lancer le site localement
 
