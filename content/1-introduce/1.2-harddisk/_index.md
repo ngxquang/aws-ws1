@@ -19,9 +19,9 @@ pre: " <b> 1.2 </b> "
      - **Temp Tablespace:** Typically, when coding, a temporary table is created for calculations and then deleted ⇒ This design is not ideal. The database itself has dedicated areas for temp. It is automatically freed at the end of the session.
      - **General tablespace:** Tablespaces can be created and tables can be created within that tablespace. In large projects, there is the concept of **data lifecycle management**. We can manage data in a specific tablespace.
 
-     ![cmd1](https://ngxquang.github.io/aws-ws1/images/1.introduce/002-cmd1.png)
+   ![cmd1](https://ngxquang.github.io/aws-ws1/images/1.introduce/002-cmd1.png)
 
-     ![cmd2](https://ngxquang.github.io/aws-ws1/images/1.introduce/003-cmd2.png)
+   ![cmd2](https://ngxquang.github.io/aws-ws1/images/1.introduce/003-cmd2.png)
 
      - **Tablespaces contain data and datafiles**
 
@@ -30,4 +30,4 @@ pre: " <b> 1.2 </b> "
      - When data is written to disk, it is first written to the doublewrite buffer.
      - Then, from the doublewrite buffer, it is written to its final location in the tablespace.
      - If a failure occurs during the write process, InnoDB can use the copy in the doublewrite buffer to recover the data page.
-       ![harddisk](https://ngxquang.github.io/aws-ws1/images/1.introduce/004-arch.png)
+      ![harddisk](https://ngxquang.github.io/aws-ws1/images/1.introduce/004-arch.png)
