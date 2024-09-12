@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Physical Restore on AWS Study Group</title>
-    <link>https://github.com/ngxquang/aws-ws1/3-restore/3.1-physical/</link>
+    <link>https://github.com/ngxquang/aws-ws1/tree/main/public/3-restore/3.1-physical/</link>
     <description>Recent content in Physical Restore on AWS Study Group</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://github.com/ngxquang/aws-ws1/3-restore/3.1-physical/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://github.com/ngxquang/aws-ws1/tree/main/public/3-restore/3.1-physical/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

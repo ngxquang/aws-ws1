@@ -11,4 +11,4 @@ pre: " <b> 1.3 </b> "
     
     2. **Redo log (DML processing area):** Stores the changes made by DML. For example, if the buffer pool holds a value of 10, and an UPDATE statement changes it to 11, the Redo log will record why 10 → 11.
 
-![Illustration of memory architecture](/images/1.introduce/001-memory.png)
+![Illustration of memory architecture](https://ngxquang.github.io/aws-ws1/images/1.introduce/001-memory.png)
