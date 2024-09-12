@@ -1,125 +1,125 @@
 [
 {
-	"uri": "/vi/2-optimization/2.2-params-optimization/2.2.1-buffer-cache/",
+	"uri": "//localhost:1313/vi/2-optimization/2.2-params-optimization/2.2.1-buffer-cache/",
 	"title": "Buffer_cache_hit",
 	"tags": [],
 	"description": "",
 	"content": " Tỷ lệ buffer_cache_hit cho biết việc sử dụng bộ nhớ của MySQL.\nTỷ lệ này thể hiện các yêu cầu được gửi đến thì MySQL thực hiện trên bộ nhớ hay phải xuống đĩa.\nDựa vào 2 thông số:\nInnodb_buffer_pool_read_requests: Tổng số yêu cầu gửi tới Buffer Pool trên bộ nhớ. Innodb_buffer_pool_read: Số yêu cầu phải xuống đĩa để lấy (Không tìm thấy trên Buffer Pool tại Memory) Muốn tính tỉ lệ buffer_cache_hit theo công thức sau: Nếu tỷ lệ \u0026lt;90% thì cần tối ưu\n"
 },
 {
-	"uri": "/vi/1-introduce/1.3-folders/",
+	"uri": "//localhost:1313/vi/1-introduce/1.3-folders/",
 	"title": "Cấu trúc thư mục sau khi cài đặt MySQL",
 	"tags": [],
 	"description": "",
 	"content": " Cấu trúc thư mục được tổ chức như sau:\nsys directory: Chứa thông tin liên quan đến sys schema performance_schema directory: Lưu thông tin để kiểm tra hoạt động của MySQL lúc đang hoạt động mysql directory: Thông tin liên quan đến data dictionary và system tables. Các thông tin này được yêu cầu bởi MySQL khi hoạt động "
 },
 {
-	"uri": "/vi/1-introduce/1.2-harddisk/",
+	"uri": "//localhost:1313/vi/1-introduce/1.2-harddisk/",
 	"title": "Kiến trúc phía ổ cứng",
 	"tags": [],
 	"description": "",
 	"content": " Kiến trúc phía ổ cứng: Chia thành nhiều thành phần (giống nhà chia thành nhiều phòng). Mỗi thành phần như vậy được gọi là tablespace (khái niệm logic)\nCác file có cùng kiểu, có cùng loại tính chất với nhau thì ghép vào cùng 1 tablespace\nTừ buffer pool, những dữ liệu thay đổi được ghi xuống tablespace. Hoặc buffer pool đọc dữ liệu từ các datafile trong các tablespace\nCó các loại tablespace:\nHệ thống: Khi cài đặt MySQL, các tablespace chứa các file hệ thống tự động được cài đặt trên system (file ibdata1) Undo Tablespace: Nhiệm vụ thực hiện việc rollback cho các câu lệnh DML. Sự khác biệt giữa Redo log và Undo như sau: Redo log cho biết quá trình diễn ra sự thay đổi dữ liệu đó. Trả lời cho câu hỏi: Tại sao 10 → 11. Nghĩa là khi giá trị thay đổi từ 10 → 11, redo log sẽ ghi lại cái thao tác đổi từ 10 → là update Undo cho phép lấy giá trị trước đó. Trả lời cho câu hỏi: Bây giờ có giá trị 11, làm sao để quay về giá trị trước đây ? Temp Tablespace: Thông thường khi code, ta sẽ tạo 1 bảng temp để thực hiện tính toán, sau đó xóa đi ⇒ Thiết kế này không ổn. Bản thân database đã có những vùng riêng cho temp. Khi kết thúc session thì tự động giải phóng. General tablespace: Có thể tạo tablespace và tạo bảng trên tablespace đó. Ở những dự án lớn, có khái niệm là quy hoạch vòng đời dữ liệu. Ta có thể quy hoạch dữ liệu ở trên 1 table space cụ thể nào Các tablespace chứa dữ liệu, chứa các datafile Redo Log cũng được ghi xuống Disk vào Redo Log File.\nDoublewrite Buffer Files\nKhi dữ liệu được ghi vào đĩa, nó sẽ được ghi trước tiên vào doublewrite buffer. Sau đó, từ doublewrite buffer, nó sẽ được ghi vào vị trí cuối cùng trong tablespace. Nếu xảy ra sự cố trong quá trình ghi, InnoDB có thể sử dụng bản sao trong doublewrite buffer để khôi phục lại trang dữ liệu đó. "
 },
 {
-	"uri": "/vi/1-introduce/1.1-memory/",
+	"uri": "//localhost:1313/vi/1-introduce/1.1-memory/",
 	"title": "Kiến trúc trên memory",
 	"tags": [],
 	"description": "",
 	"content": " Khi cơ sở dữ liệu lưu trên memory, có 2 thành phần chính: Buffer pool (hoặc buffer cache): Khi thực hiện 1 câu SELECT thì lấy dữ liệu từ buffer này.\nKhi truy vấn lần đầu tiên, dữ liệu được đọc từ đĩa lên và lưu vào buffer, những lần đọc tiếp theo tương tự thì nó chỉ lấy dữ liệu từ buffer chứ không cần lấy từ đĩa. Redo log (Vùng xử lý DML): Lưu trữ những dữ liệu thay đổi của DML. Ví dụ trong buffer pool đang có giá trị là 10. Câu lệnh UPDATE thành 11 thì Redo log nó sẽ lưu Tại sao 10 → 11\n"
 },
 {
-	"uri": "/vi/",
+	"uri": "//localhost:1313/vi/",
 	"title": "MySQL Architechture",
 	"tags": [],
 	"description": "",
 	"content": "Kiến trúc và tối ưu hóa với MySQL Tổng quan Trong bối cảnh quản lý cơ sở dữ liệu, việc tối ưu hóa và khôi phục dữ liệu là rất quan trọng để duy trì hiệu suất và đảm bảo tính toàn vẹn của dữ liệu. Trong bài này sẽ chia sẻ chủ yếu cung cấp hướng dẫn về cách tối ưu hóa các truy vấn MySQL và sao lưu/khôi phục dữ liệu.\nNội dung Tổng quan về MySQL Tối ưu trong MySQL Restore Data "
 },
 {
-	"uri": "/vi/3-restore/3.1-physical/",
+	"uri": "//localhost:1313/vi/3-restore/3.1-physical/",
 	"title": "Physical Restore",
 	"tags": [],
 	"description": "",
 	"content": " Physical Backup trong MySQL là phương pháp sao lưu toàn bộ các tệp vật lý của cơ sở dữ liệu, bao gồm cả tệp dữ liệu, tệp log và tệp cấu hình, từ hệ thống lưu trữ\nPhysical Backup lưu trực tiếp các tệp hệ thống mà MySQL sử dụng để lưu trữ dữ liệu. Các tệp này bao gồm các tệp InnoDB data file, MyISAM data file, tệp log (log files), và các tệp cấu hình liên quan.\nDữ liệu được sao chép nguyên vẹn và được sử dụng lại ngay khi khôi phục, mà không cần phải thực thi lại các câu lệnh SQL như trong Logical Backup.\n"
 },
 {
-	"uri": "/vi/2-optimization/2.1-sql-optimization/",
+	"uri": "//localhost:1313/vi/2-optimization/2.1-sql-optimization/",
 	"title": "Tối ưu thực thi SQL",
 	"tags": [],
 	"description": "",
 	"content": "Muốn tối ưu bất kỳ điều gì, chúng ta đều cần biết thứ gọi là chiến lược thực thi\nNội dung Vấn đề đặt ra Index Partition "
 },
 {
-	"uri": "/vi/1-introduce/",
+	"uri": "//localhost:1313/vi/1-introduce/",
 	"title": "Tổng quan về MySQL",
 	"tags": [],
 	"description": "",
 	"content": "MySQL là một hệ quản trị cơ sở dữ liệu phổ biến, được thiết kế để quản lý và lưu trữ dữ liệu một cách hiệu quả. Cách MySQL tổ chức và xử lý dữ liệu không chỉ giúp tối ưu hóa hiệu suất mà còn đảm bảo tính toàn vẹn và an toàn cho dữ liệu. Bằng việc kết hợp sử dụng bộ nhớ đệm và lưu trữ trên ổ cứng, MySQL có khả năng truy xuất thông tin nhanh chóng đồng thời đảm bảo rằng mọi thay đổi đều được ghi lại và bảo vệ.\nTrong quá trình hoạt động, MySQL tận dụng hệ thống lưu trữ thông minh để tổ chức dữ liệu vào các không gian lưu trữ (tablespace) khác nhau. Điều này giúp hệ thống quản lý dữ liệu lớn một cách mượt mà, đồng thời cung cấp khả năng phục hồi khi có sự cố xảy ra. Nhờ đó, MySQL luôn là lựa chọn đáng tin cậy cho các hệ thống quản lý dữ liệu từ nhỏ đến lớn.\nNội dung Cấu trúc thư mục sau khi cài đặt MySQL Kiến trúc phía ổ cứng Kiến trúc trên memory "
 },
 {
-	"uri": "/vi/2-optimization/2.1-sql-optimization/2.1.1-problems/",
+	"uri": "//localhost:1313/vi/2-optimization/2.1-sql-optimization/2.1.1-problems/",
 	"title": "Vấn đề đặt ra",
 	"tags": [],
 	"description": "",
 	"content": " Giả sử có 1 câu lệnh SELECT, muốn tối ưu thì phải xem chiến lược thực thi của câu lệnh đó Cách xem chiến lược thực thi: Dùng EXPLAIN \u0026lt;câu lệnh\u0026gt; Các thông số quan trọng: table: customers: Table mà nó đang quét type: ALL (tương tự Full Table Scan): Quét hết toàn bộ bản ghi ở trong customers rows: 10: Phán đoán của hệ thống có bao nhiêu bản ghi trong bảng. Có thể phán đoán sai filtered: dự kiến sau khi quét 10 bản ghi của rows thì có bao nhiêu phần trăm là thỏa điều kiện where Cần chú ý: Bất kỳ khi nào nhìn thấy type: ALL thì cần phải suy nghĩ lại. Nếu số lượng bản ghi nhỏ (10 - 100) thì không sao, nhưng số lượng hàng chục nghìn, hàng trăm nghìn thì rất tiêu tốn hiệu năng "
 },
 {
-	"uri": "/vi/2-optimization/2.1-sql-optimization/2.1.2-index/",
+	"uri": "//localhost:1313/vi/2-optimization/2.1-sql-optimization/2.1.2-index/",
 	"title": "Index",
 	"tags": [],
 	"description": "",
 	"content": " Tạo index trên 1 cột có trong điều kiện where:\nSự khác biệt khi EXPLAIN lại: type: ref: type lúc này không phải ALL nữa mà là ref. Nghĩa là nó không quét toàn bộ bảng nữa mà nó quét index mình vừa tạo possible_keys: idx_namsinh: Hệ thống có thể sử dụng những index nào để thực thi câu lệnh của mình key: idx_namsinh: Trong đống possible_keys mà hệ thống thấy thì nó chọn duy nhất idx_namsinh rows: 1: Giảm so với ở trên Tạo index trên nhiều cột (thường được áp dụng)\nTạo index trên 2 cột: Sự khác biệt khi EXPLAIN lại: possible_keys: idx_namsinh, idx_namsinh_ngaygd: Hệ thống có thêm 1 index nữa là cái mình vừa tạo\nkey: idx_namsinh_ngaygd: Trong đống possible_keys mà hệ thống thấy thì nó chọn duy nhất idx_namsinh rows: 1: Khi làm việc với csdl hàng nghìn dòng thì mới thấy được sự khác biệt. Ví dụ trên chỉ là demo Lưu ý khi sử dụng composite index (index trên nhiều cột):\nCột đầu tiên đóng vai trò cực kỳ quan trọng Giả sử ta chỉnh sửa câu lệnh trên thành chỉ có thuộc tính ngay_giao_dich thì sao? Cột Type: ALL: Nó lại phải quét hết dữ liệu bảng mặc dù mình đã tạo index ? possible_keys: là NULL: ??? Tại sao mình đã đặt index trên 2 cột là cột nam_sinh và ngay_giao_dich nhưng không có ??? ⇒ Cột đầu tiên rất quan trọng trong composite index. Nếu tạo 1 composite index khác mà đưa ngay_giao_dich lên trước thì nó sẽ khác: "
 },
 {
-	"uri": "/vi/3-restore/3.2-logical/",
+	"uri": "//localhost:1313/vi/3-restore/3.2-logical/",
 	"title": "Logical Restore",
 	"tags": [],
 	"description": "",
 	"content": " Logical Backup lưu trữ dữ liệu và cấu trúc của cơ sở dữ liệu dưới dạng câu lệnh SQL, ví dụ như CREATE TABLE, INSERT INTO, v.v. Cách này chủ yếu sao lưu nội dung của cơ sở dữ liệu (bao gồm bảng, dữ liệu, triggers, stored procedures, v.v.) mà không liên quan đến các tệp vật lý của cơ sở dữ liệu.\nCông cụ phổ biến nhất để tạo Logical Backup trong MySQL là mysqldump.\nBackup 1 bảng\nBackup chỉ cấu trúc của bảng Câu lệnh: mysqldump.exe -uroot -p \u0026lt;tên database\u0026gt; -d \u0026lt;tên bảng\u0026gt; \u0026gt; \u0026lt;đường dẫn folder\u0026gt;\u0026lt;tên bảng\u0026gt;_ddl.sql\nBackup chỉ dữ liệu bảng Câu lệnh: mysqldump.exe -uroot -p \u0026lt;tên database\u0026gt; -t \u0026lt;tên bảng\u0026gt; \u0026gt; \u0026lt;đường dẫn folder\u0026gt;\u0026lt;tên bảng\u0026gt;_data.sql\nBackup cả cấu trúc và dữ liệu của bảng Câu lệnh: mysqldump.exe -uroot -p \u0026lt;tên database\u0026gt; \u0026lt;tên bảng\u0026gt; \u0026gt; \u0026lt;đường dẫn folder\u0026gt;\u0026lt;tên bảng\u0026gt;_table.sql\nBackup 1 hoặc nhiều Database\nBackup 1 database: Câu lệnh: mysqldump.exe -uroot -p \u0026lt;tên database\u0026gt; \u0026gt; \u0026lt;đường dẫn folder\u0026gt;\u0026lt;tên database\u0026gt;db.sql\nBackup toàn bộ tất cả databases: Câu lệnh: mysqldump.exe -uroot -p \u0026ndash;all-database \u0026gt; \u0026lt;đường dẫn folder\u0026gt;\\alldb.sql\n"
 },
 {
-	"uri": "/vi/2-optimization/2.2-params-optimization/2.2.2-table-cache/",
+	"uri": "//localhost:1313/vi/2-optimization/2.2-params-optimization/2.2.2-table-cache/",
 	"title": "Table_cache_hit",
 	"tags": [],
 	"description": "",
 	"content": " Cache: Nếu cache được trên bộ nhớ thì hiệu năng tăng.\nBên trên thì cache trên mức block dữ liệu, còn ở phần này cache trên mức table\nCó 2 thông số để tính:\nOpen_tables: Tổng số table được open trong caches Opened_tables: Tổng số table được Open Tính tỷ lệ Table Cache Hit theo công thức sau: Nếu tỷ lệ \u0026lt; 80% thì cần tối ưu\nTham số tối ưu: Tăng tham số table_open_cache "
 },
 {
-	"uri": "/vi/2-optimization/2.2-params-optimization/",
+	"uri": "//localhost:1313/vi/2-optimization/2.2-params-optimization/",
 	"title": "Tối ưu tham số trong MySQL",
 	"tags": [],
 	"description": "",
 	"content": "Tạo IAM Role Ngoài việc tối ưu câu lệnh SQL, ta còn có thể tối ưu tham số trong hệ thống của MySQL.\nTrong phần này, chúng ta sẽ tìm hiểu 2 loại tối ưu tham số.\nBuffer Cache Hit Table Cache Hit "
 },
 {
-	"uri": "/vi/2-optimization/",
+	"uri": "//localhost:1313/vi/2-optimization/",
 	"title": "Tối ưu trong MySQL",
 	"tags": [],
 	"description": "",
 	"content": " Tối ưu SQL trong MySQL Trong một hệ thống cơ sở dữ liệu lớn, việc tối ưu hóa câu lệnh SQL đóng vai trò quan trọng trong việc nâng cao hiệu suất. Mỗi truy vấn không chỉ đơn thuần là tìm kiếm và lấy dữ liệu, mà còn là một quá trình xử lý phức tạp ảnh hưởng đến tốc độ của toàn bộ hệ thống.\nTại sao cần tối ưu? Trong thực tế, khi cơ sở dữ liệu ngày càng lớn, các truy vấn SQL có thể trở nên chậm chạp và tiêu tốn nhiều tài nguyên. Vì vậy, tối ưu hóa truy vấn là điều cần thiết để tránh việc hệ thống bị quá tải và cải thiện tốc độ phản hồi.\nPhần này sẽ trình bày cách MySQL thực thi câu lệnh và áp dụng các kỹ thuật tối ưu như sử dụng index hay partition.\nNội dung Tối ưu thực thi SQL Tối ưu tham số "
 },
 {
-	"uri": "/vi/2-optimization/2.1-sql-optimization/2.1.3-partition/",
+	"uri": "//localhost:1313/vi/2-optimization/2.1-sql-optimization/2.1.3-partition/",
 	"title": "Partition",
 	"tags": [],
 	"description": "",
 	"content": " Giả sử chúng ta tạo một bảng customers_partition, giống với bảng customers nhưng được phân chia thành các phân vùng (partition). Cấu trúc DDL của bảng này không khác biệt nhiều so với bảng thông thường, nhưng điểm nổi bật là cột Ngày giao dịch được dùng để tạo các phân vùng. Cụ thể, các giao dịch sẽ được chia vào từng partition dựa trên điều kiện LESS THAN year(\u0026lsquo;Ngay_giao_dich\u0026rsquo;), mỗi partition giống như một tầng của tòa nhà dữ liệu.\nViệc áp dụng partition giúp tăng tốc độ truy vấn, đặc biệt khi bảng dữ liệu có kích thước lớn. Tuy nhiên, để tận dụng tối đa hiệu quả của partition, điều kiện WHERE trong truy vấn cần phải bao gồm cột đã được sử dụng để tạo partition.\nCREATE TABLE customers_partition (\rid INT,\rten_khach_hang VARCHAR(100),\rngay_giao_dich DATE\r)\rPARTITION BY RANGE (YEAR(ngay_giao_dich)) (\rPARTITION p0 VALUES LESS THAN (2015),\rPARTITION p1 VALUES LESS THAN (2020),\rPARTITION p2 VALUES LESS THAN (2025)\r); Giả sử như chúng ta có bảng customers_partition như trên PARTITION BY RANGE (YEAR(ngay_giao_dich)): Phân chia theo khoảng (RANGE Partitioning) dựa trên cột ngay_giao_dich. Ở đây, dữ liệu được phân vùng dựa trên năm của cột ngay_giao_dich bằng cách sử dụng hàm YEAR(), nghĩa là các giá trị ngay_giao_dich sẽ được chuyển thành năm để xác định phần dữ liệu thuộc partition nào. Ví dụ: Nếu ngay_giao_dich là \u0026lsquo;2018-03-15\u0026rsquo;, MySQL sẽ lấy năm \u0026lsquo;2018\u0026rsquo; để phân chia dữ liệu.\nPARTITION p0 VALUES LESS THAN (2015): Partition p0 lưu trữ tất cả các hàng có giá trị của YEAR(ngay_giao_dich) nhỏ hơn năm 2015. Điều này có nghĩa là mọi giao dịch trước năm 2015 sẽ được lưu vào partition này.\n"
 },
 {
-	"uri": "/vi/3-restore/",
+	"uri": "//localhost:1313/vi/3-restore/",
 	"title": "Restore Data",
 	"tags": [],
 	"description": "",
 	"content": "Vậy các phần trước chúng ta đã tìm hiểu về cách tối ưu database, phần này chúng ta sẽ tìm hiểu cách để backup dữ liệu để tránh trường hợp mất mát dữ liệu\nNội dung 3.1. Physical Restore 3.2. Logical Restore\n"
 },
 {
-	"uri": "/vi/categories/",
+	"uri": "//localhost:1313/vi/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/vi/tags/",
+	"uri": "//localhost:1313/vi/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

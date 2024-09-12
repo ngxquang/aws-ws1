@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Restore Data on AWS System Manager</title>
-    <link>/3-restore/</link>
-    <description>Recent content in Restore Data on AWS System Manager</description>
+    <title>Restore Data on AWS Study Group</title>
+    <link>//localhost:1313/3-restore/</link>
+    <description>Recent content in Restore Data on AWS Study Group</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/3-restore/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/3-restore/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
